@@ -23,7 +23,7 @@ const saveScore = () =>
 setInterval(() => saveScore(), 10 * 1000)
 
 client.on("message", (message) => {
-  if (typeof scores[message.guild.id] !== "number") scores[message.guild] = 0
+  if (typeof scores[message.guild.id] !== "number") scores[message.guild.id] = 0
   if (message.content.startsWith(`${prefix}help`)) {
     message.channel.send(`__Help__
     
