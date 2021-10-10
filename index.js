@@ -33,6 +33,10 @@ client.on("message", (message) => {
     )
   }
 
+  if (message.content.startsWith(`${prefix}score`)) {
+    message.channel.send(`Score is now ${score[message.guild.id]}`)
+  }
+
   if (message.content.startsWith(`${prefix}add`)) {
     score[message.guild.id]=score[message.guild.id]+1
     message.channel.send(`Score is now ${score[message.guild.id]}`)
