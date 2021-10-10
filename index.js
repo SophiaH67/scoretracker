@@ -14,10 +14,11 @@ try {
 }
 client.on("ready", () => {
   console.log("I am ready!")
+  setInterval(() => 
   client.user.setActivity({
     name: `${prefix}help for ${client.guilds.cache.size} servers`,
     type: "PLAYING"
-  });
+  }), 30 * 1000)
 })
 
 const saveScore = () => 
