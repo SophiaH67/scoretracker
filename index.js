@@ -55,4 +55,7 @@ client.on("message", (message) => {
   }
 })
 
+process.on('unhandledRejection', console.log)
+process.on('uncaughtException', console.log)
+
 client.login(process.env.TOKEN)
