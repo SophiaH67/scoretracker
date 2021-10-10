@@ -15,7 +15,7 @@ try {
 client.on("ready", () => {
   console.log("I am ready!")
   client.user.setActivity({
-    name: `${prefix}help`,
+    name: `${prefix}help for ${client.guilds.cache.size} servers`,
     type: "PLAYING"
   });
 })
