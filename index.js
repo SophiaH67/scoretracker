@@ -14,6 +14,10 @@ try {
 }
 client.on("ready", () => {
   console.log("I am ready!")
+  client.user.setActivity({
+    name: `${prefix}help`,
+    type: "PLAYING"
+  });
 })
 
 const saveScore = () => 
