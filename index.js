@@ -35,17 +35,17 @@ client.on("message", (message) => {
   }
 
   if (message.content.startsWith(`${prefix}score`)) {
-    message.channel.send(`Score is now ${score[message.guild.id]}`)
+    message.channel.send(`Score is now ${scores[message.guild.id]}`)
   }
 
   if (message.content.startsWith(`${prefix}add`)) {
-    score[message.guild.id]=score[message.guild.id]+1
-    message.channel.send(`Score is now ${score[message.guild.id]}`)
+    scores[message.guild.id]=scores[message.guild.id]+1
+    message.channel.send(`Score is now ${scores[message.guild.id]}`)
   }
 
   if (message.content.startsWith(`${prefix}minus`)) {
-    score[message.guild.id]=score[message.guild.id]-1
-    message.channel.send(`Score is now ${score[message.guild.id]}`)
+    scores[message.guild.id]=scores[message.guild.id]-1
+    message.channel.send(`Score is now ${scores[message.guild.id]}`)
   }
 })
 
