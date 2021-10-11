@@ -34,6 +34,7 @@ client.on("message", (message) => {
     message.channel.send(`__Help__
     
     ${prefix}score - gets the current score
+    ${prefix}delete - (admin only) deletes the server counter
     ${prefix}add - adds one to the current score
     ${prefix}minus - removes one to the current score
     `
@@ -42,6 +43,12 @@ client.on("message", (message) => {
 
   if (message.content.startsWith(`${prefix}score`)) {
     message.channel.send(`Score is now ${scores[message.guild.id]}`).catch(console.log)
+  }
+
+  if (message.content.startsWith(`${prefix}delete`)) {
+    if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('You do not have permission.').catch(console.log)
+    scores[message.guild.id] = 0
+    message.channel.send(`Server removed!`).catch(console.log)
   }
 
   if (message.content.startsWith(`${prefix}add`)) {
