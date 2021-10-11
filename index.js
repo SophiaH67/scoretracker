@@ -37,12 +37,17 @@ client.on("message", (message) => {
     ${prefix}delete - (admin only) deletes the server counter
     ${prefix}add - adds one to the current score
     ${prefix}minus - removes one to the current score
+    ${prefix}contact <message> - sends message to the developer
     `
     ).catch(console.log)
   }
 
   if (message.content.startsWith(`${prefix}score`)) {
     message.channel.send(`Score is now ${scores[message.guild.id]}`).catch(console.log)
+  }
+
+  if (message.content.startsWith(`${prefix}contact`)) {
+    client.users.cache.get('178210163369574401').send(`Message ${message.content}`).catch(console.log)
   }
 
   if (message.content.startsWith(`${prefix}delete`)) {
